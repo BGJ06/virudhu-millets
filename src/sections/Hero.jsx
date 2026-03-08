@@ -22,7 +22,7 @@ export const Hero = () => {
         playsInline 
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
       >
-        <source src="/images/Opening.mp4" type="video/mp4" />
+        <source src="./images/Opening.mp4" type="video/mp4" />
       </video>
 
       <div className="container mx-auto px-6 text-center text-white z-10">
@@ -34,7 +34,7 @@ export const Hero = () => {
         >
           {/* Logo integration from user request */}
           <div className="flex justify-center mb-6">
-            <img src="/images/Logo.png" alt="Virudhu Millets Main Logo" className="w-48 h-48 md:w-64 md:h-64 object-contain bg-white rounded-full p-2 shadow-2xl" />
+            <img src="./images/Logo.png" alt="Virudhu Millets Main Logo" className="w-48 h-48 md:w-64 md:h-64 object-contain bg-white rounded-full p-2 shadow-2xl" />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">VIRUDHU MILLETS</h1>

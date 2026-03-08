@@ -28,7 +28,7 @@ export const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-3">
-          <img src="/images/Logo2.png" alt="Header Logo" className="w-12 h-12 object-contain rounded-full bg-white shadow-sm p-1" />
+          <img src="./images/Logo2.png" alt="Header Logo" className="w-12 h-12 object-contain rounded-full bg-white shadow-sm p-1" />
           <div className="flex flex-col">
             <span className="text-xl md:text-2xl font-bold text-[var(--color-primary-green)] tracking-wider">VIRUDHU MILLETS</span>
             <span className="text-xs md:text-sm font-semibold text-[var(--color-millet-brown)]">விருது சிறுதானியம்</span>

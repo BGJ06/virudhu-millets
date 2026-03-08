@@ -7,42 +7,42 @@ export const Products = () => {
     {
       id: 1, tamilName: "கம்பு", englishName: "Pearl Millet",
       desc: "Iron-rich excellent Pearl Millet grains.",
-      mrp1kg: 60, mrpHalfKg: 32, resale1kg: 50, resaleHalfKg: 26, img: "/images/Pearl Millet.jpeg" 
+      mrp1kg: 60, mrpHalfKg: 32, resale1kg: 50, resaleHalfKg: 26, img: "./images/Pearl Millet.jpeg" 
     },
     {
       id: 2, tamilName: "தினை", englishName: "Foxtail Millet",
       desc: "Healthy cardiac-friendly Thinai.",
-      mrp1kg: 80, mrpHalfKg: 42, resale1kg: 70, resaleHalfKg: 36, img: "/images/Foxtail Millet.jpeg" 
+      mrp1kg: 80, mrpHalfKg: 42, resale1kg: 70, resaleHalfKg: 36, img: "./images/Foxtail Millet.jpeg" 
     },
     {
       id: 3, tamilName: "குதிரைவாலி", englishName: "Barnyard Millet",
       desc: "High fiber Kuthiraivali, great for diets.",
-      mrp1kg: 90, mrpHalfKg: 48, resale1kg: 80, resaleHalfKg: 42, img: "/images/Barnyard Millet.jpeg" 
+      mrp1kg: 90, mrpHalfKg: 48, resale1kg: 80, resaleHalfKg: 42, img: "./images/Barnyard Millet.jpeg" 
     },
     {
       id: 4, tamilName: "வரகு", englishName: "Kodo Millet",
       desc: "Antioxidant-rich Varagu for better health.",
-      mrp1kg: 85, mrpHalfKg: 45, resale1kg: 75, resaleHalfKg: 39, img: "/images/Kodo Millet.jpeg" 
+      mrp1kg: 85, mrpHalfKg: 45, resale1kg: 75, resaleHalfKg: 39, img: "./images/Kodo Millet.jpeg" 
     },
     {
       id: 5, tamilName: "பனி வரகு", englishName: "Proso Millet",
       desc: "Rich in protein and low glycemic index.",
-      mrp1kg: 85, mrpHalfKg: 45, resale1kg: 75, resaleHalfKg: 39, img: "/images/Proso Millet.jpeg" 
+      mrp1kg: 85, mrpHalfKg: 45, resale1kg: 75, resaleHalfKg: 39, img: "./images/Proso Millet.jpeg" 
     },
     {
       id: 6, tamilName: "கேப்பை", englishName: "Ragi / Finger Millet",
       desc: "Calcium-rich excellent Ragi grains.",
-      mrp1kg: 65, mrpHalfKg: 35, resale1kg: 55, resaleHalfKg: 29, img: "/images/Ragi.jpeg" 
+      mrp1kg: 65, mrpHalfKg: 35, resale1kg: 55, resaleHalfKg: 29, img: "./images/Ragi.jpeg" 
     },
     {
       id: 7, tamilName: "கருப்புக்கவுனி அரிசி", englishName: "Black Kavuni Rice",
       desc: "Rich in antioxidants and high nutritional value.",
-      mrp1kg: 150, mrpHalfKg: 80, resale1kg: 130, resaleHalfKg: 70, img: "/images/Black Kavuni Rice.jpeg" 
+      mrp1kg: 150, mrpHalfKg: 80, resale1kg: 130, resaleHalfKg: 70, img: "./images/Black Kavuni Rice.jpeg" 
     },
     {
       id: 8, tamilName: "மாப்பிள்ளை சம்பா அரிசி", englishName: "Mappillai Samba Rice",
       desc: "Traditional red rice for immunity and strength.",
-      mrp1kg: 140, mrpHalfKg: 75, resale1kg: 120, resaleHalfKg: 65, img: "/images/Mappillai Samba Rice.jpeg" 
+      mrp1kg: 140, mrpHalfKg: 75, resale1kg: 120, resaleHalfKg: 65, img: "./images/Mappillai Samba Rice.jpeg" 
     }
   ];
 

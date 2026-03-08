@@ -71,7 +71,7 @@ export const HealthyChoice = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group border-4 border-[var(--color-cream-bg)]">
               <video
                 ref={videoRef}
-                src="/images/Video.mp4"
+                src="./images/Video.mp4"
                 className="w-full h-full object-cover aspect-video md:aspect-square"
                 autoPlay
                 controls={playCount >= 2}
