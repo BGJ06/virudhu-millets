@@ -52,7 +52,7 @@ export const About = () => {
             <div className="flex justify-center md:justify-end w-full">
               <div className="rounded-3xl shadow-2xl max-w-sm w-full bg-white p-6 border-4 border-[var(--color-cream-bg)] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="./images/Logo2.png" 
+                  src="/virudhu-millets/images/Logo2.png" 
                   alt="Virudhu Millets Store Logo" 
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-700"
                 />
