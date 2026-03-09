@@ -32,6 +32,7 @@ export default {
   },
   products: {
     title: "எங்கள் தயாரிப்புகள்",
+    weight: "எடை",
     mrp: "MRP",
     resale: "Resale",
     toOrder: "ஆர்டர் செய்ய",

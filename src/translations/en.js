@@ -32,6 +32,7 @@ export default {
   },
   products: {
     title: "Our Products",
+    weight: "Weight",
     mrp: "MRP",
     resale: "Resale",
     toOrder: "To Order",

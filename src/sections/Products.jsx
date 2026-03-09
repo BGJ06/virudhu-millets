@@ -9,19 +9,19 @@ export const Products = () => {
   const products = [
     {
       id: 1, nameKey: "pearlMillet",
-      mrp1kg: 60, mrpHalfKg: 32, resale1kg: 50, resaleHalfKg: 26, img: "/virudhu-millets/images/Pearl Millet.jpeg" 
+      mrp1kg: 60, mrpHalfKg: 30, resale1kg: 56, resaleHalfKg: 28, img: "/virudhu-millets/images/Pearl Millet.jpeg" 
     },
     {
       id: 2, nameKey: "foxtailMillet",
-      mrp1kg: 80, mrpHalfKg: 42, resale1kg: 70, resaleHalfKg: 36, img: "/virudhu-millets/images/Foxtail Millet.jpeg" 
+      mrp1kg: 80.92, mrpHalfKg: 40.46, resale1kg: 73.56, resaleHalfKg: 37, img: "/virudhu-millets/images/Foxtail Millet.jpeg" 
     },
     {
       id: 3, nameKey: "barnyardMillet",
-      mrp1kg: 90, mrpHalfKg: 48, resale1kg: 80, resaleHalfKg: 42, img: "/virudhu-millets/images/Barnyard Millet.jpeg" 
+      mrp1kg: 109, mrpHalfKg: 54.50, resale1kg: 99.09, resaleHalfKg: 50, img: "/virudhu-millets/images/Barnyard Millet.jpeg" 
     },
     {
       id: 4, nameKey: "kodoMillet",
-      mrp1kg: 85, mrpHalfKg: 45, resale1kg: 75, resaleHalfKg: 39, img: "/virudhu-millets/images/Kodo Millet.jpeg" 
+      mrp1kg: 84, mrpHalfKg: 42, resale1kg: 76, resaleHalfKg: 38, img: "/virudhu-millets/images/Kodo Millet.jpeg" 
     },
     {
       id: 5, nameKey: "prosoMillet",
@@ -33,11 +33,11 @@ export const Products = () => {
     },
     {
       id: 7, nameKey: "blackKavuniRice",
-      mrp1kg: 150, mrpHalfKg: 80, resale1kg: 130, resaleHalfKg: 70, img: "/virudhu-millets/images/Black Kavuni Rice.jpeg" 
+      mrp1kg: 84, mrpHalfKg: 42, resale1kg: 78, resaleHalfKg: 39, img: "/virudhu-millets/images/Black Kavuni Rice.jpeg" 
     },
     {
       id: 8, nameKey: "mappillaiSambaRice",
-      mrp1kg: 140, mrpHalfKg: 75, resale1kg: 120, resaleHalfKg: 65, img: "/virudhu-millets/images/Mappillai Samba Rice.jpeg" 
+      mrp1kg: 44, mrpHalfKg: 22, resale1kg: 40, resaleHalfKg: 20, img: "/virudhu-millets/images/Mappillai Samba Rice.jpeg" 
     }
   ];
 
@@ -77,13 +77,20 @@ export const Products = () => {
                 <p className="text-gray-600 mb-4 text-sm flex-grow">{t(`products.items.${product.nameKey}.desc`)}</p>
                 
                 <div className="bg-[var(--color-cream-bg)] p-4 rounded-xl mb-6">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="font-semibold text-gray-700">{t('products.mrp')}:</span>
-                    <span>₹{product.mrp1kg} / 1kg | ₹{product.mrpHalfKg} / ½kg</span>
+                  <div className="grid grid-cols-3 gap-2 text-sm text-center mb-2 font-bold text-gray-700 border-b pb-2">
+                    <div className="text-left">{t('products.weight')}</div>
+                    <div>{t('products.mrp')}</div>
+                    <div className="text-[var(--color-primary-green)]">{t('products.resale')}</div>
                   </div>
-                  <div className="flex justify-between text-sm text-[var(--color-primary-green)] font-semibold">
-                    <span>{t('products.resale')}:</span>
-                    <span>₹{product.resale1kg} / 1kg | ₹{product.resaleHalfKg} / ½kg</span>
+                  <div className="grid grid-cols-3 gap-2 text-sm text-center items-center mb-2">
+                    <div className="text-left font-semibold text-gray-600">1 KG</div>
+                    <div className="text-gray-500 line-through">₹{product.mrp1kg}</div>
+                    <div className="text-[var(--color-primary-green)] font-bold text-base">₹{product.resale1kg}</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-sm text-center items-center">
+                    <div className="text-left font-semibold text-gray-600">½ KG</div>
+                    <div className="text-gray-500 line-through">₹{product.mrpHalfKg}</div>
+                    <div className="text-[var(--color-primary-green)] font-bold text-base">₹{product.resaleHalfKg}</div>
                   </div>
                 </div>
 
