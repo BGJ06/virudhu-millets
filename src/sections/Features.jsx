@@ -1,23 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, HeartPulse, Truck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Features = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: <Award className="w-16 h-16 text-[var(--color-primary-green)] mb-6 mx-auto" />,
-      title: "Premium Quality",
-      desc: "100% authentic and naturally grown millets directly from farmers."
+      title: t('features.1.title'),
+      desc: t('features.1.desc')
     },
     {
       icon: <HeartPulse className="w-16 h-16 text-[var(--color-primary-green)] mb-6 mx-auto" />,
-      title: "Healthy Choice",
-      desc: "Rich in fiber, vitamins, and vital nutrients for your family."
+      title: t('features.2.title'),
+      desc: t('features.2.desc')
     },
     {
       icon: <Truck className="w-16 h-16 text-[var(--color-primary-green)] mb-6 mx-auto" />,
-      title: "Freshly Delivered",
-      desc: "Direct from farm to your home fresh with special care."
+      title: t('features.3.title'),
+      desc: t('features.3.desc')
     }
   ];
 
@@ -31,7 +34,7 @@ export const Features = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4 text-[#333]"
           >
-            Why Choose Our Company
+            {t('features.title')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +43,7 @@ export const Features = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            Virudhu Millets provides high-quality traditional millets sourced from trusted farmers and promotes healthy living.
+            {t('features.subtitle') || "Virudhu Millets provides high-quality traditional millets sourced from trusted farmers and promotes healthy living."}
           </motion.p>
         </div>
 

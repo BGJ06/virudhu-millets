@@ -10,6 +10,7 @@ import { About } from './sections/About';
 import { Contact } from './sections/Contact';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <LanguageSwitcher />
     </div>
   );
 }

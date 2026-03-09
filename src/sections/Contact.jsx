@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Headset, CheckCircle, Star, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Contact = () => {
+  const { t } = useLanguage();
+
   const supportBlocks = [
-    { icon: <Headset className="w-10 h-10 text-[var(--color-primary-green)]" />, title: "24/7 Support", desc: "Always here for you." },
-    { icon: <CheckCircle className="w-10 h-10 text-[var(--color-accent-gold)]" />, title: "100% Satisfaction", desc: "Guaranteed quality." },
-    { icon: <Star className="w-10 h-10 text-[var(--color-millet-brown)]" />, title: "5 Star Service", desc: "Excellence delivered." },
+    { icon: <Headset className="w-10 h-10 text-[var(--color-primary-green)]" />, title: t('contact.support247') || "24/7 Support", desc: t('contact.supportDesc') || "Always here for you." },
+    { icon: <CheckCircle className="w-10 h-10 text-[var(--color-accent-gold)]" />, title: t('contact.satisfaction') || "100% Satisfaction", desc: t('contact.satisfactionDesc') || "Guaranteed quality." },
+    { icon: <Star className="w-10 h-10 text-[var(--color-millet-brown)]" />, title: t('contact.starService') || "5 Star Service", desc: t('contact.starDesc') || "Excellence delivered." },
   ];
 
   return (
@@ -18,7 +21,7 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('contact.title')}</h2>
           <div className="w-24 h-1 bg-[var(--color-primary-green)] mx-auto rounded-full mb-6"></div>
         </motion.div>
 
@@ -48,9 +51,9 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl font-bold text-[#333]">How Can We Help You?</h3>
+          <h3 className="text-3xl font-bold text-[#333]">{t('contact.helpTitle')}</h3>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Feel free to reach out to us with any inquiries, suggestions, or large bulk orders. We will respond promptly!
+            {t('contact.helpDesc')}
           </p>
         </motion.div>
 
@@ -64,9 +67,9 @@ export const Contact = () => {
               className="bg-[var(--color-primary-green)] text-white p-10 h-full rounded-3xl shadow-xl flex flex-col items-center text-center group cursor-pointer"
             >
               <Mail className="w-16 h-16 mb-6 opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-2" />
-              <h3 className="text-3xl font-bold mb-4">Email Us</h3>
+              <h3 className="text-3xl font-bold mb-4">{t('contact.emailUs')}</h3>
               <p className="text-lg opacity-90">contact@virudhumillets.com</p>
-              <p className="text-lg opacity-90 mt-2 font-bold hover:underline">Phone: +91 87470 78268</p>
+              <p className="text-lg opacity-90 mt-2 font-bold hover:underline">{t('contact.phone')}</p>
             </motion.div>
           </a>
           
@@ -84,10 +87,10 @@ export const Contact = () => {
               className="bg-white text-[#333] p-10 h-full rounded-3xl shadow-xl border-t-8 border-[var(--color-millet-brown)] flex flex-col items-center text-center group cursor-pointer"
             >
               <MapPin className="w-16 h-16 mb-6 text-[var(--color-millet-brown)] group-hover:text-[var(--color-primary-green)] transition-colors transform group-hover:-translate-y-2" />
-              <h3 className="text-3xl font-bold mb-4">Visit Store</h3>
+              <h3 className="text-3xl font-bold mb-4">{t('contact.visitStore')}</h3>
               <p className="text-lg text-gray-600 uppercase tracking-wider font-semibold">
-                165 Aruppukotai Road, Allampatti<br />
-                Virudhunagar – 626001
+                {t('contact.addressLine1')}<br />
+                {t('contact.addressLine2')}
               </p>
             </motion.div>
           </a>

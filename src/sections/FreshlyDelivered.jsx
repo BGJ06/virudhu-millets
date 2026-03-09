@@ -1,23 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Package, Percent } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const FreshlyDelivered = () => {
+  const { t } = useLanguage();
+
   const cards = [
     {
       icon: <Home className="w-12 h-12 text-[var(--color-primary-green)]" />,
-      title: "Home Delivery",
-      desc: "Doorstep fast service directly to your home."
+      title: t('freshlyDelivered.cards.1.title') || "Home Delivery",
+      desc: t('freshlyDelivered.cards.1.desc') || "Doorstep fast service directly to your home."
     },
     {
       icon: <Package className="w-12 h-12 text-[var(--color-millet-brown)]" />,
-      title: "Wholesale Stock",
-      desc: "Bulk supply availability for stores and restaurants."
+      title: t('freshlyDelivered.cards.2.title') || "Wholesale Stock",
+      desc: t('freshlyDelivered.cards.2.desc') || "Bulk supply availability for stores and restaurants."
     },
     {
       icon: <Percent className="w-12 h-12 text-[var(--color-accent-gold)]" />,
-      title: "Bulk Discounts",
-      desc: "Special discounted price for bulk and large orders."
+      title: t('freshlyDelivered.cards.3.title') || "Bulk Discounts",
+      desc: t('freshlyDelivered.cards.3.desc') || "Special discounted price for bulk and large orders."
     }
   ];
 
@@ -30,9 +33,9 @@ export const FreshlyDelivered = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Freshly Delivered</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('freshlyDelivered.title')}</h2>
           <div className="w-24 h-1 bg-[var(--color-millet-brown)] mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">We ensure farm-to-table freshness with every order.</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('freshlyDelivered.subtitle') || "We ensure farm-to-table freshness with every order."}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

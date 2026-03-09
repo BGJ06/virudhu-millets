@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#1a1a1a] text-white pt-20 pb-10 border-t-4 border-[var(--color-primary-green)] text-center relative overflow-hidden">
       
@@ -19,35 +22,35 @@ export const Footer = () => {
         >
           {/* Logo & Brand */}
           <div className="text-center md:text-left">
-            <h3 className="text-3xl font-bold text-[var(--color-primary-green)] mb-2 tracking-wide">VIRUDHU MILLETS</h3>
-            <p className="text-2xl text-[var(--color-accent-gold)] font-medium mb-4">விருது சிறுதானியம்</p>
+            <h3 className="text-3xl font-bold text-[var(--color-primary-green)] mb-2 tracking-wide">{t('footer.brandName') || "VIRUDHU MILLETS"}</h3>
             <p className="text-gray-400 max-w-xs mx-auto md:mx-0 leading-relaxed italic border-l-2 border-[var(--color-primary-green)] pl-4">
-              "Healthy Traditional Grains for a Better Life"
+              {t('footer.tagline') || "\"Healthy Traditional Grains for a Better Life\""}
             </p>
           </div>
+
           
           {/* Contact Info */}
           <div className="text-center md:text-right">
             <p className="font-bold text-lg mb-4 text-[var(--color-primary-green)] uppercase tracking-wider border-b border-gray-700 pb-2">
-              A1382 Virudhunagar District Consumer <br className="hidden md:block"/> Cooperative Wholesale Stores Ltd
+              {t('footer.coop') || "A1382 Virudhunagar District Consumer Cooperative Wholesale Stores Ltd"}
             </p>
             <ul className="text-gray-400 space-y-3">
               <li className="flex items-center justify-center md:justify-end">
                 <a href="https://maps.app.goo.gl/DW1kkemqwQGVdeym9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center">
                   <span className="bg-gray-800 p-2 rounded-full mr-3 text-xs"><i className="fa-solid fa-location-dot"></i></span>
-                  165 Aruppukotai Road, Allampatti, Virudhunagar – 626001
+                  {t('footer.address') || "165 Aruppukotai Road, Allampatti, Virudhunagar – 626001"}
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-end">
                 <a href="tel:+918747078268" className="hover:text-white transition-colors flex items-center font-bold">
                   <span className="bg-gray-800 p-2 rounded-full mr-3 text-xs"><i className="fa-solid fa-phone"></i></span>
-                  +91 87470 78268
+                  {t('footer.phone') || "+91 87470 78268"}
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-end">
                 <a href="mailto:contact@virudhumillets.com" className="hover:text-white transition-colors flex items-center">
                   <span className="bg-gray-800 p-2 rounded-full mr-3 text-xs"><i className="fa-solid fa-envelope"></i></span>
-                  contact@virudhumillets.com
+                  {t('footer.email') || "contact@virudhumillets.com"}
                 </a>
               </li>
             </ul>
@@ -69,7 +72,7 @@ export const Footer = () => {
         </motion.div>
 
         <div className="border-t border-gray-800 pt-8 mt-8">
-          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Virudhu Millets. All Rights Reserved. Crafted by weBros.</p>
+          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} {t('footer.copyright') || "Virudhu Millets. All Rights Reserved. Crafted by weBros."}</p>
         </div>
       </div>
     </footer>

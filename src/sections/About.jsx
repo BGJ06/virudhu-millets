@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 export const About = () => {
+  const { t } = useLanguage();
+  
   const team = [
-    { name: "Ramarajan", role: "Founder", phone: "+91 98765 43210", icon: "👨🏽‍💼" },
-    { name: "Karthika", role: "Managing Director", phone: "+91 98765 43211", icon: "👩🏽‍💼" },
-    { name: "Murugan", role: "Manager", phone: "+91 98765 43212", icon: "👨🏽‍💻" },
-    { name: "Devi", role: "Millets Manager", phone: "+91 98765 43213", icon: "👩🏽‍🌾" }
+    { name: "Ramarajan", role: t('about.roles.founder'), phone: "+91 98765 43210", icon: "👨🏽‍💼" },
+    { name: "Karthika", role: t('about.roles.md'), phone: "+91 98765 43211", icon: "👩🏽‍💼" },
+    { name: "Murugan", role: t('about.roles.manager'), phone: "+91 98765 43212", icon: "👨🏽‍💻" },
+    { name: "Devi", role: t('about.roles.milletsManager'), phone: "+91 98765 43213", icon: "👩🏽‍🌾" }
   ];
 
   return (
@@ -18,13 +21,10 @@ export const About = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold mb-4">About Us / எங்களை பற்றி</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('about.title')}</h2>
           <div className="w-24 h-1 bg-[var(--color-accent-gold)] mx-auto rounded-full mb-8"></div>
-          <p className="text-2xl text-[var(--color-primary-green)] font-light max-w-4xl mx-auto leading-relaxed mb-4">
-            விருது சிறுதானியம் தரமான, பாரம்பரிய சிறுதானியங்களை உங்கள் இல்லம் தேடி வழங்கி வருகிறது. விவசாயிகளுக்கும் நுகர்வோருக்கும் இடையே ஒரு பாலமாக நாங்கள் செயல்படுகிறோம்.
-          </p>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Virudhu Millets is dedicated to delivering the finest authentic, traditional millets directly to your home. We bridge the gap between hard-working farmers and health-conscious consumers.
+            {t('about.desc1')}
           </p>
         </motion.div>
 
@@ -35,12 +35,9 @@ export const About = () => {
             viewport={{ once: true }}
             className="w-full md:w-1/2 space-y-6"
           >
-            <h3 className="text-3xl font-bold text-[#333]">Our Story / எங்கள் கதை</h3>
-            <p className="text-lg text-[var(--color-primary-green)] font-semibold leading-relaxed">
-              A1382 விருதுநகர் மாவட்ட நுகர்வோர் கூட்டுறவு மொத்த விற்பனை நிலையத்தின் ஒரு அங்கமாக, தமிழ்நாட்டின் சமையல் பாரம்பரியத்தை பாதுகாக்கும் நோக்கில் இந்த பயணத்தை தொடங்கினோம்.
-            </p>
+            <h3 className="text-3xl font-bold text-[#333]">{t('about.ourStory')}</h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Established as part of A1382 Virudhunagar District Consumer Cooperative Wholesale Stores Ltd, we embarked on a journey to preserve the culinary heritage of Tamil Nadu. Our mission is to provide unadulterated, wholesome food to every family while supporting our local agricultural community.
+              {t('about.storyDesc1')}
             </p>
           </motion.div>
           <motion.div 
@@ -67,7 +64,7 @@ export const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl font-bold">Meet Our Team</h3>
+          <h3 className="text-3xl font-bold">{t('about.meetTeam')}</h3>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

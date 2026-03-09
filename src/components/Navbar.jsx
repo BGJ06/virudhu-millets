@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,13 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Product Quality', href: '#product-quality' },
-    { name: 'Healthy Choice', href: '#healthy-choice' },
-    { name: 'Freshly Delivered', href: '#freshly-delivered' },
-    { name: 'Products', href: '#products' },
-    { name: 'About Us', href: '#about-us' },
-    { name: 'Contact', href: '#contact' }
+    { name: t('navbar.home'), href: '#home' },
+    { name: t('navbar.productQuality'), href: '#product-quality' },
+    { name: t('navbar.healthyChoice'), href: '#healthy-choice' },
+    { name: t('navbar.freshlyDelivered'), href: '#freshly-delivered' },
+    { name: t('navbar.products'), href: '#products' },
+    { name: t('navbar.aboutUs'), href: '#about-us' },
+    { name: t('navbar.contact'), href: '#contact' }
   ];
 
   return (
@@ -30,8 +32,7 @@ export const Navbar = () => {
         <a href="#home" className="flex items-center gap-3">
           <img src="/virudhu-millets/images/Logo2.png" alt="Header Logo" className="w-12 h-12 object-contain rounded-full bg-white shadow-sm p-1" />
           <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-bold text-[var(--color-primary-green)] tracking-wider">VIRUDHU MILLETS</span>
-            <span className="text-xs md:text-sm font-semibold text-[var(--color-millet-brown)]">விருது சிறுதானியம்</span>
+            <span className="text-xl md:text-2xl font-bold text-[var(--color-primary-green)] tracking-wider">{t('navbar.title')}</span>
           </div>
         </a>
 

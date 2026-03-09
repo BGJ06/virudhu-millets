@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Reviews = () => {
+  const { t } = useLanguage();
+
   const [reviews, setReviews] = useState([
     {
       id: 1,
-      name: "Muthukumar",
+      name: t('reviews.1.name') || "Muthukumar",
       rating: 5,
-      comment: "Excellent quality kambu and ragi! Quick delivery too."
+      comment: t('reviews.1.review') || "Excellent quality kambu and ragi! Quick delivery too."
     },
     {
       id: 2,
-      name: "Saraswathi",
+      name: t('reviews.2.name') || "Saraswathi",
       rating: 5,
-      comment: "Very authentic and traditional taste. The Mappillai Samba rice is the best I've had."
+      comment: t('reviews.2.review') || "Very authentic and traditional taste. The Mappillai Samba rice is the best I've had."
     },
     {
       id: 3,
-      name: "Karthik R.",
+      name: t('reviews.3.name') || "Karthik R.",
       rating: 4,
-      comment: "Good products and reasonable pricing. Will definitely order again."
+      comment: t('reviews.3.review') || "Good products and reasonable pricing. Will definitely order again."
     }
   ]);
   
@@ -43,7 +46,7 @@ export const Reviews = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Customer Reviews</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('reviews.title')}</h2>
           <div className="w-24 h-1 bg-[var(--color-accent-gold)] mx-auto rounded-full"></div>
         </motion.div>
 

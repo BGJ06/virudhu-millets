@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 export const HealthyChoice = () => {
   const [playCount, setPlayCount] = React.useState(0);
   const videoRef = React.useRef(null);
+  const { t } = useLanguage();
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -57,7 +59,7 @@ export const HealthyChoice = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Healthy Choice</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('healthyChoice.title')}</h2>
           <div className="w-24 h-1 bg-[var(--color-accent-gold)] mx-auto rounded-full mb-6"></div>
         </motion.div>
 
@@ -86,10 +88,10 @@ export const HealthyChoice = () => {
             viewport={{ once: true }}
             className="w-full md:w-1/2 space-y-6"
           >
-            <h3 className="text-3xl font-bold text-[#333]">Traditional Diet</h3>
+            <h3 className="text-3xl font-bold text-[#333]">{t('healthyChoice.subtitle')}</h3>
             <div className="bg-[var(--color-cream-bg)] p-6 rounded-2xl border-l-4 border-[var(--color-primary-green)] shadow-md">
-              <p className="text-xl text-gray-700 mb-2">Incorporate the ancient wisdom of millets into your daily routine for sustained energy.</p>
-              <p className="text-xl text-[var(--color-millet-brown)] font-bold">நமது பாரம்பரிய பழக்கமான சிறுதானிய உணவுகள் ஆரோக்கியத்திற்கு மிகச்சிறந்தது.</p>
+              <p className="text-xl text-gray-700 mb-2">{t('healthyChoice.desc1')}</p>
+              <p className="text-xl text-[var(--color-millet-brown)] font-bold">{t('healthyChoice.desc2')}</p>
             </div>
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-center"><div className="w-2 h-2 rounded-full bg-[var(--color-primary-green)] mr-3"></div> Natural Weight Management</li>
