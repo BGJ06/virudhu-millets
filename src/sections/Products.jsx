@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import ProductModal from '../components/ProductModal';
 
 export const Products = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   // Mapping the images the user provided
   const products = [
@@ -65,12 +67,22 @@ export const Products = () => {
               whileHover={{ y: -10 }}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full"
             >
-              <div className="relative h-64 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+              <div
+                className="relative h-64 overflow-hidden bg-gray-100 flex items-center justify-center p-4 cursor-pointer"
+                onClick={() => setSelectedProduct(product)}
+                title={t(`products.items.${product.nameKey}.name`)}
+              >
                 <img 
                   src={product.img} 
                   alt={t(`products.items.${product.nameKey}.name`)}
                   className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500 rounded"
                 />
+                {/* Subtle hover overlay hint */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/80 text-[var(--color-primary-green)] text-xs font-semibold px-3 py-1 rounded-full shadow">
+                    View Details
+                  </span>
+                </div>
               </div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold mb-1 text-[#333] drop-shadow-sm">{t(`products.items.${product.nameKey}.name`)}</h3>
@@ -94,17 +106,49 @@ export const Products = () => {
                   </div>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="block w-full text-center bg-[var(--color-primary-green)] hover:bg-[var(--color-primary-green-dark)] text-white py-3 rounded-xl font-bold transition-colors duration-300 ripple overflow-hidden relative shadow-md hover:shadow-lg"
-                >
-                  <span className="relative z-10">{t('products.toOrder')}</span>
-                </a>
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={() => setSelectedProduct(product)}
+                    className="block w-full text-center border-2 border-[var(--color-primary-green)] text-[var(--color-primary-green)] hover:bg-[var(--color-primary-green)] hover:text-white py-2 rounded-xl font-semibold transition-all duration-300 text-sm"
+                  >
+                    {t('products.learnMore')}
+                  </button>
+                  <a
+                    href="#contact"
+                    className="block w-full text-center bg-[var(--color-primary-green)] hover:bg-[var(--color-primary-green-dark)] text-white py-3 rounded-xl font-bold transition-colors duration-300 ripple overflow-hidden relative shadow-md hover:shadow-lg"
+                  >
+                    <span className="relative z-10">{t('products.toOrder')}</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <ProductModal
+          product={{
+            name: t(`products.items.${selectedProduct.nameKey}.name`),
+            desc: t(`products.items.${selectedProduct.nameKey}.desc`),
+            benefits: t(`products.items.${selectedProduct.nameKey}.benefits`) || [],
+            cookingTip: t(`products.items.${selectedProduct.nameKey}.cookingTip`),
+            origin: t(`products.items.${selectedProduct.nameKey}.origin`),
+          }}
+          image={selectedProduct.img}
+          t={{
+            modal: {
+              benefits: t('modal.benefits'),
+              cookingTip: t('modal.cookingTip'),
+              origin: t('modal.origin'),
+              orderWhatsApp: t('modal.orderWhatsApp'),
+              close: t('modal.close'),
+            }
+          }}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </section>
   );
 };

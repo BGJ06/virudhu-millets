@@ -36,16 +36,72 @@ export default {
     mrp: "MRP",
     resale: "Resale",
     toOrder: "To Order",
+    learnMore: "Learn More",
     items: {
-      pearlMillet: { name: "Pearl Millet", desc: "Iron-rich excellent Pearl Millet grains." },
-      foxtailMillet: { name: "Foxtail Millet", desc: "Healthy cardiac-friendly Thinai." },
-      barnyardMillet: { name: "Barnyard Millet", desc: "High fiber Kuthiraivali, great for diets." },
-      kodoMillet: { name: "Kodo Millet", desc: "Antioxidant-rich Varagu for better health." },
-      prosoMillet: { name: "Proso Millet", desc: "Rich in protein and low glycemic index." },
-      ragi: { name: "Ragi / Finger Millet", desc: "Calcium-rich excellent Ragi grains." },
-      blackKavuniRice: { name: "Black Kavuni Rice", desc: "Rich in antioxidants and high nutritional value." },
-      mappillaiSambaRice: { name: "Mappillai Samba Rice", desc: "Traditional red rice for immunity and strength." },
+      pearlMillet: {
+        name: "Pearl Millet", nameTa: "கம்பு",
+        desc: "Iron-rich excellent Pearl Millet grains.",
+        benefits: ["High in iron & zinc", "Supports bone health", "Gluten-free grain", "Boosts energy levels"],
+        cookingTip: "Soak overnight for softer texture. Perfect for rotis, porridge, and dosa batter.",
+        origin: "A staple grain of Tamil Nadu, traditionally called Kambu."
+      },
+      foxtailMillet: {
+        name: "Foxtail Millet", nameTa: "தினை",
+        desc: "Healthy cardiac-friendly Thinai.",
+        benefits: ["Heart-friendly grain", "Low glycemic index", "Rich in dietary fiber", "Helps manage diabetes"],
+        cookingTip: "Cook like rice (1:2 ratio). Excellent for upma, pongal, and rice substitution.",
+        origin: "One of India's oldest cultivated millets, revered in Sangam literature."
+      },
+      barnyardMillet: {
+        name: "Barnyard Millet", nameTa: "குதிரைவாலி",
+        desc: "High fiber Kuthiraivali, great for diets.",
+        benefits: ["Highest fiber among millets", "Weight management", "Low calorie grain", "Improves digestion"],
+        cookingTip: "Ideal for fasting recipes. Cook as rice or make khichdi with lentils.",
+        origin: "Known as Kuthiraivali in Tamil, commonly used in temple festival foods."
+      },
+      kodoMillet: {
+        name: "Kodo Millet", nameTa: "வரகு",
+        desc: "Antioxidant-rich Varagu for better health.",
+        benefits: ["Rich in antioxidants", "Reduces cholesterol", "Regulates blood sugar", "Good for liver health"],
+        cookingTip: "Best cooked as pongal or pulao. Has a mild, nutty flavour that pairs well with spices.",
+        origin: "Traditional Tamil grain Varagu, mentioned in ancient Siddha medicine texts."
+      },
+      prosoMillet: {
+        name: "Proso Millet", nameTa: "பனி வரகு",
+        desc: "Rich in protein and low glycemic index.",
+        benefits: ["High protein content", "Essential amino acids", "Low GI — diabetic-friendly", "Rich in B-vitamins"],
+        cookingTip: "Quick-cooking millet. Use in salads, soups or as a substitute for couscous.",
+        origin: "Grown across dry zones of Tamil Nadu, a nutritious traditional grain."
+      },
+      ragi: {
+        name: "Ragi / Finger Millet", nameTa: "கேப்பை",
+        desc: "Calcium-rich excellent Ragi grains.",
+        benefits: ["Highest calcium of any grain", "Strengthens bones & teeth", "Rich in amino acid methionine", "Aids weight loss"],
+        cookingTip: "Use ragi flour for dosas, porridge (kanji), or mudde. Best steamed or pressure-cooked.",
+        origin: "A beloved grain of Tamil Nadu, traditionally given to new mothers for its calcium content."
+      },
+      blackKavuniRice: {
+        name: "Black Kavuni Rice", nameTa: "கருப்புக்கவுனி அரிசி",
+        desc: "Rich in antioxidants and high nutritional value.",
+        benefits: ["Rich in anthocyanins", "Powerful antioxidant", "Supports heart health", "Anti-inflammatory properties"],
+        cookingTip: "Soak for 30 minutes before cooking. Makes an excellent dessert payasam or serve as sticky rice.",
+        origin: "A royal heritage rice of Tamil Nadu, historically offered in temples."
+      },
+      mappillaiSambaRice: {
+        name: "Mappillai Samba Rice", nameTa: "மாப்பிள்ளை சம்பா அரிசி",
+        desc: "Traditional red rice for immunity and strength.",
+        benefits: ["Boosts immunity", "High in iron & zinc", "Energizing & strength-giving", "Rich in dietary fiber"],
+        cookingTip: "Cook with slightly more water (1:2.5). The nutty flavour pairs perfectly with kuzhambu dishes.",
+        origin: "A legendary Tamil variety traditionally given to grooms for strength and vitality."
+      },
     }
+  },
+  modal: {
+    benefits: "Health Benefits",
+    cookingTip: "Cooking Tip",
+    origin: "Origin & Tradition",
+    orderWhatsApp: "Order on WhatsApp",
+    close: "Close",
   },
   features: {
     title: "Why Choose Virudhu Millets?",
